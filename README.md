@@ -37,5 +37,5 @@ This repository contains a FastAPI application that provides endpoints for extra
 Deploy simply using Docker. Build the Docker image and run the container:
 ```bash
 docker build -t anviro .
-docker run -d -p 8000:8000 anviro
+docker run --rm --env-file .env anviro
 ```
