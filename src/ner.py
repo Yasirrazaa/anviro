@@ -7,14 +7,14 @@ def ner_spacy(text):
     nlp = spacy.load("en_core_web_sm")
     doc = nlp(text)
     entities = [(ent.text, ent.label_) for ent in doc.ents]
-    summary = summarize_text(text)
-    return {"entities": entities, "summary": summary}
+    response = summarize_text(text)
+    return {"entities": entities, "tags": response["tags"], "summary": response["summary"]}
 
 def ner_transformers(text):
     ner = pipeline("ner", grouped_entities=True)
     entities = [(entity['word'], entity['entity_group']) for entity in ner(text)]
-    summary = summarize_text(text)
-    return {"entities": entities, "summary": summary}
+    response = summarize_text(text)
+    return {"entities": entities, "tags": response["tags"], "summary": response["summary"]}
 
 def main():
     argparser = argparse.ArgumentParser(description="Named Entity Recognition using SpaCy or Transformers")

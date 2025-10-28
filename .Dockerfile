@@ -6,9 +6,9 @@ WORKDIR /app
 # install uv
 RUN pip install uv
 
-COPY pyproject.toml /app/
+COPY pyproject.toml uv.lock /app/
 
-RUN uv sync --frozen --compile-bytecode
+RUN uv venv && uv sync --frozen --compile-bytecode
 # Copy requirements file
 COPY /src .env main.py pyproject.toml /app/
 

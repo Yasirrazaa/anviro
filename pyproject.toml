@@ -4,4 +4,10 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "fastapi>=0.120.1",
+    "google-genai>=1.46.0",
+    "spacy>=3.8.7",
+    "transformers>=4.57.1",
+    "uvicorn>=0.38.0",
+]
