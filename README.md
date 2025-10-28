@@ -10,7 +10,7 @@ This repository contains a FastAPI application that provides endpoints for extra
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Yasirrazaa/anviro.git
 2. Navigate to the project directory:
    ```bash
     cd anviro
