@@ -1,5 +1,4 @@
 from src.ner import ner_spacy, ner_transformers
-from src.summarize import summarize_text
 from fastapi import FastAPI
 import uvicorn
 

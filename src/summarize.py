@@ -8,9 +8,14 @@ def summarize_text(text):
         model="gemini-2.5-flash",
         contents=f"Provide a tag list (3-5 max)  and a summary from following text:\n\n{text} in this fromat:\nTags: [tag1, tag2, tag3] \nSummary: summary text",
     )
-    tags= response.text.split("Tags:")[1].split("Summary:")[0].strip()
-    summary = response.text.split("Summary:")[1].strip()
-    return {"tags": tags, "summary": summary}
+
+    try:
+        tags= response.text.split("Tags:")[1].split("Summary:")[0].strip()
+        summary = response.text.split("Summary:")[1].strip()
+        return {"tags": tags, "summary": summary}
+    except Exception as e:
+        print(f"Error occurred: {e}")
+        return {"tags": response.text, "summary": response.text}
 
 
 def main():
